@@ -1,7 +1,8 @@
 ### 1.安装
 #### 1.1 安装docker并加速
 - `yum update && yum install docker`
-- ```
+
+```
   sudo mkdir -p /etc/docker
 
   sudo tee /etc/docker/daemon.json <<-'EOF'
@@ -12,12 +13,11 @@
 
   sudo systemctl daemon-reload
   sudo systemctl restart docker
-  ```
+```
   
 #### 1.2 安装docker-compose
 
 - `yum install epel-release && yum install python-pip && pip install docker-compose`
-
 
 #### 1.3 安装nexus
 
