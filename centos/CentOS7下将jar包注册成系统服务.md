@@ -8,7 +8,7 @@
         - 新增`export JAVA_HOME=/usr/java/jdk1.8.0_161`
         - 使`.bash_profile`生效: `source .bash_profile`
         
-### 注册service
+### 注册Service
 - 上传`jar`包
 - 进入`/etc/systemd/system`文件夹，新增`auth-server.service`文件:
 
