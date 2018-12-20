@@ -1,19 +1,14 @@
 ### 1.安装
 #### 1.1 安装docker并加速
 - `yum update && yum install docker`
-
-```
-  sudo mkdir -p /etc/docker
-
-  sudo tee /etc/docker/daemon.json <<-'EOF'
+- `sudo mkdir -p /etc/docker`
+- `sudo tee /etc/docker/daemon.json <<-'EOF'
   {
   "registry-mirrors": ["https://y7u9p3i0.mirror.aliyuncs.com"]
-}
-  EOF
-
-  sudo systemctl daemon-reload
-  sudo systemctl restart docker
-```
+  }
+  EOF`
+- `sudo systemctl daemon-reload`
+- `sudo systemctl restart docker`
   
 #### 1.2 安装docker-compose
 
