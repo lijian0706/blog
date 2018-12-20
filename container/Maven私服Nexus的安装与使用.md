@@ -77,8 +77,5 @@ services:
 - 本地jar包发布到nexus:
 
 ```
-mvn deploy:deploy-file -DgroupId=com.alipay -DartifactId=alipay-trade-sdk -Dversion=1.0.0.RELEASE -Dpackaging=jar -Dfile=alipay-trade-sdk-20161215.jar -Durl=http://lab.hfcsbc.com:8081/artifactory/libs-release-local -DrepositoryId=central
+mvn deploy:deploy-file -DgroupId=com.alipay -DartifactId=alipay-trade-sdk -Dversion=1.0.0.RELEASE -Dpackaging=jar -Dfile=alipay-trade-sdk-20161215.jar -Durl=http://192.168.1.223:10000/artifactory/libs-release-local -DrepositoryId=central
 ```
-
-
-

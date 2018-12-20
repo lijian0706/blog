@@ -28,8 +28,3 @@ WantedBy=multi-user.target
 - `systemctl enable auth-server.service`
 - `systemctl start auth-server`
 - `systemctl stop auth-server`, `systemctl status auth-server`
-
-
-
-
-
