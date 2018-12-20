@@ -2,11 +2,16 @@
 #### 1.1 安装docker并加速
 - `yum update && yum install docker`
 - `sudo mkdir -p /etc/docker`
-- `sudo tee /etc/docker/daemon.json <<-'EOF'
+- 
+
+```
+sudo tee /etc/docker/daemon.json <<-'EOF'
   {
   "registry-mirrors": ["https://y7u9p3i0.mirror.aliyuncs.com"]
   }
-  EOF`
+  EOF
+```
+ 
 - `sudo systemctl daemon-reload`
 - `sudo systemctl restart docker`
   
