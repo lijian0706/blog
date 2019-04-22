@@ -38,6 +38,8 @@ public class Authority implements GrantedAuthority {
         return this.getCode();
     }
 
+
+
     public static List<Authority> init(){
         Authority authority = new Authority("QUERY_USER_INFO", "查询用户信息");
         List<Authority> authorities = new ArrayList<>();

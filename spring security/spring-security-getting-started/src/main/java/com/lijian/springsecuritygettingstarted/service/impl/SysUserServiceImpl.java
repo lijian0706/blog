@@ -23,4 +23,9 @@ public class SysUserServiceImpl implements SysUserService {
         SysUser adminUser = SysUser.initAdminUser(passwordEncoder.encode(SysUser.ADMIN_PASSWORD));
         return sysUserRepository.save(adminUser);
     }
+
+    @Override
+    public SysUser queryUser(String username) {
+        return sysUserRepository.findByUsername(username);
+    }
 }

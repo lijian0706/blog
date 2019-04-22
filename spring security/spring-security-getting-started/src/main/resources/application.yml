@@ -16,3 +16,5 @@ spring:
 spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
 server:
   port: 9999
+
+logging.level.org.springframework: INFO

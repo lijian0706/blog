@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
@@ -29,7 +30,7 @@ public class SysUser implements UserDetails {
     @NotNull
     private String password;
     @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
-    private List<Role> roles = Collections.EMPTY_LIST;
+    private List<Role> roles = new ArrayList<>();
 
     public SysUser(String username, String password, List<Role> roles){
         this.setUsername(username);
@@ -39,7 +40,7 @@ public class SysUser implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<GrantedAuthority> authorities = Collections.EMPTY_LIST;
+        List<GrantedAuthority> authorities = new ArrayList<>();
         this.roles.forEach(role -> authorities.addAll(role.getAuthorities()));
         return authorities;
     }
