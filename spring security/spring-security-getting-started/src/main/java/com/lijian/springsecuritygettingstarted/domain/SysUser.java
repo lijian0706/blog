@@ -28,7 +28,7 @@ public class SysUser implements UserDetails {
     private String username;
     @NotNull
     private String password;
-    @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER,cascade = CascadeType.DETACH)
+    @ManyToMany(targetEntity = Role.class,fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private List<Role> roles = Collections.EMPTY_LIST;
 
     public SysUser(String username, String password, List<Role> roles){

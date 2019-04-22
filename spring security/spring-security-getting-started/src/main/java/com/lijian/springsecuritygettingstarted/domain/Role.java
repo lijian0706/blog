@@ -24,7 +24,7 @@ public class Role {
     private String code;
     @NotNull
     private String name;
-    @ManyToMany(targetEntity = Authority.class,fetch = FetchType.EAGER,cascade = CascadeType.DETACH)
+    @ManyToMany(targetEntity = Authority.class,fetch = FetchType.EAGER,cascade = CascadeType.PERSIST)
     private List<Authority> authorities = Collections.EMPTY_LIST;
 
     public Role(String code, String name, List<Authority> authorities){
