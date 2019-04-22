@@ -1,0 +1,18 @@
+spring:
+  jpa:
+    database: POSTGRESQL
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    platform: postgres
+    url: jdbc:postgresql://localhost:5432/auth
+    username: lijian
+    password: lijian
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 1
+
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults: false
+server:
+  port: 9999
