@@ -3,6 +3,7 @@ package com.lijian.springsecuritygettingstarted.security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -13,7 +14,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+@EnableGlobalMethodSecurity(prePostEnabled = true) // 开启全局方法安全，方法上可添加`@PreAuthorize`进行权限控制
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Bean
@@ -50,12 +51,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                     .logoutUrl("/logout") // 注销地址，默认即为"/logout"
                     .logoutSuccessUrl("/login.html") // 注销成功后的跳转地址
                 .and()
-                .csrf().disable();
+                .csrf().disable(); // 本示例关闭了跨站请求伪造攻击的保护，生产环境应开启
 
+    }
+
+    @Bean
+    public AuthenticationProvider authenticationProvider(){
+        return new CustomerAuthenticationProvider();
     }
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService());
+//        auth.userDetailsService(userDetailsService());
+        auth.authenticationProvider(authenticationProvider());
     }
+
 }
