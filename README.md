@@ -2,6 +2,7 @@
 ### Spring Security
 - [Spring Security 快速入门](https://github.com/lijian0706/blog/tree/master/spring%20security/spring-security-getting-started)
 - [Spring Boot + Spring Security Oauth 搭建SSO服务器和客户端教程](https://lijian0706.github.io/spring-security-oauth2-demo/)
+- [spring sso自定义授权页面](https://github.com/lijian0706/spring-security-oauth2-demo/blob/master/spring%20sso%E8%87%AA%E5%AE%9A%E4%B9%89%E6%8E%88%E6%9D%83%E9%A1%B5%E9%9D%A2.md)
 ### Spring Data
 - [Spring Data ElasticSearch 实现相似度查询](https://lijian0706.github.io/elasticsearch-fuzzy-query/)
 # 其他
