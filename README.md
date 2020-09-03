@@ -9,3 +9,4 @@
 - [commons-net FTP文件上传](https://github.com/lijian0706/blog/blob/master/java/commons-net%20FTP%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.md)
 - [FTPClient对象池的实现](https://github.com/lijian0706/ftp-pool/tree/master)
 - [Spring Cloud集成websocket实现消息实时推送](https://lijian0706.github.io/spring-cloud-websocket/)
+- [Spring data jest实现Elasticsearch相似度查询](https://lijian0706.github.io/elasticsearch-fuzzy-query/)
