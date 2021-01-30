@@ -11,3 +11,4 @@
 - [Spring Cloud集成websocket实现消息实时推送](https://lijian0706.github.io/spring-cloud-websocket/)
 - [Spring data jest实现Elasticsearch相似度查询](https://lijian0706.github.io/elasticsearch-fuzzy-query/)
 - [代码重构常用手法](https://lijian0706.github.io/refactor/)
+- [使用lua脚本实现spring redis zadd只更新不新增功能](https://github.com/lijian0706/blog/blob/master/spring-redis-zadd-xx.md)
