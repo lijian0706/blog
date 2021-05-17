@@ -1,0 +1,667 @@
+{
+	"info": {
+		"_postman_id": "e58bbaf6-d8ae-4f76-87e9-c6f8085af8f1",
+		"name": "用户模块(user)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "dev",
+			"item": [
+				{
+					"name": "司机端登录-发送短信验证码",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{lupiaoer-dev}}/customer/user/drivers/sendLoginSms?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"customer",
+								"user",
+								"drivers",
+								"sendLoginSms"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "司机端登录",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cellphone\":\"15555417041\",\n    \"verificationCode\":\"227145\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/customer/user/drivers/loginBySms?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"customer",
+								"user",
+								"drivers",
+								"loginBySms"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业端修改个人密码",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cellphone\":\"15555417041\",\n    \"verificationCode\":\"227145\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/enterprise/user/companyUsers",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"companyUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业端忘记密码",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cellphone\": \"15555417041\",\n  \"verificationCode\": \"1234\",\n  \"newPassword\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/enterprise/user/companyUsers/forgetPassword",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"companyUsers",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业端登录-获取企业信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cellphone\": \"15555417041\",\n  \"verificationCode\": \"1234\",\n  \"newPassword\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/enterprise/user/companyUsers/",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"companyUsers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业修改个人密码发送短信验证码",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/enterprise/user/company/sms/send?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"company",
+								"sms",
+								"send"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "运营端登录",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/operation/user",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"operation",
+								"user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "test",
+			"item": [
+				{
+					"name": "司机端登录-发送短信验证码",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{lupiaoer-test}}/customer/user/drivers/sendLoginSms?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-test}}"
+							],
+							"path": [
+								"customer",
+								"user",
+								"drivers",
+								"sendLoginSms"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "司机端登录",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{lupiaoer-test}}/customer/user/drivers/sendLoginSms?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-test}}"
+							],
+							"path": [
+								"customer",
+								"user",
+								"drivers",
+								"sendLoginSms"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业端修改个人密码",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cellphone\":\"15555417041\",\n    \"verificationCode\":\"227145\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-test}}/enterprise/user/companyUsers",
+							"host": [
+								"{{lupiaoer-test}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"companyUsers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业端忘记密码",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cellphone\": \"15555417041\",\n  \"verificationCode\": \"1234\",\n  \"newPassword\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-test}}/enterprise/user/companyUsers/forgetPassword",
+							"host": [
+								"{{lupiaoer-test}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"companyUsers",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业端登录-获取企业信息",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cellphone\": \"15555417041\",\n  \"verificationCode\": \"1234\",\n  \"newPassword\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-test}}/enterprise/user/companyUsers/",
+							"host": [
+								"{{lupiaoer-test}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"companyUsers",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "企业修改个人密码发送短信验证码",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-dev}}/enterprise/user/company/sms/send?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-dev}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"company",
+								"sms",
+								"send"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "运营端登录",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "620fa84ed00b4e3ea31ac69125724cda",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{lupiaoer-test}}/enterprise/user/company/sms/send?cellphone=15555417041",
+							"host": [
+								"{{lupiaoer-test}}"
+							],
+							"path": [
+								"enterprise",
+								"user",
+								"company",
+								"sms",
+								"send"
+							],
+							"query": [
+								{
+									"key": "cellphone",
+									"value": "15555417041"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
