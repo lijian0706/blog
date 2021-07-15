@@ -12,3 +12,4 @@
 - [Spring data jest实现Elasticsearch相似度查询](https://lijian0706.github.io/elasticsearch-fuzzy-query/)
 - [代码重构常用手法](https://lijian0706.github.io/refactor/)
 - [使用lua脚本实现spring redis zadd只更新不新增功能](https://github.com/lijian0706/blog/blob/master/spring-redis-zadd-xx.md)
+- [spring cloud stream 3.x简单使用](https://github.com/lijian0706/blog/blob/master/spring-cloud-stream-binder-kafka.md)
